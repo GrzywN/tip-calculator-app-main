@@ -23,6 +23,7 @@
     "parcel": "^2.5.0"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
     "eslint": "^8.15.0",

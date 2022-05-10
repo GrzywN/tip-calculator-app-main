@@ -7,3 +7,9 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+body {
+  min-height: 100vh;
+
+  background-color: $color-light-grayish-cyan;
+}
