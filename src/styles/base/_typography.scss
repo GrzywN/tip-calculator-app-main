@@ -1,0 +1,13 @@
+html {
+  font-family: $font-family-monospace;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+}
+
+label {
+  font-weight: 700;
+}
