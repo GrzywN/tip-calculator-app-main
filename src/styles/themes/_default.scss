@@ -6,6 +6,26 @@ label {
   background-color: #fff;
 }
 
+.input {
+  background-color: $color-very-light-grayish-cyan;
+  color: $color-very-dark-cyan;
+  caret-color: $color-strong-cyan;
+
+  &:focus {
+    border-color: $color-strong-cyan;
+  }
+}
+
+.input--bill::placeholder,
+.input--people::placeholder {
+  color: $color-very-dark-cyan;
+  opacity: 0.35;
+}
+
+.input--custom-tip::placeholder {
+  color: $color-dark-grayish-cyan;
+}
+
 .button--tip {
   background-color: $color-very-dark-cyan;
   color: $color-white;

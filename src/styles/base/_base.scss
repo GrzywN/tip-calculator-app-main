@@ -12,6 +12,10 @@ html {
   // border: 1px dashed grey;
 }
 
+::placeholder {
+  opacity: 1;
+}
+
 body {
   background-color: $color-light-grayish-cyan;
 }

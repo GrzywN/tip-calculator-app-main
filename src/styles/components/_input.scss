@@ -1,5 +1,57 @@
 .input {
-  width: 100%;
+  direction: rtl;
 
-  min-height: 3rem;
+  width: 100%;
+  height: 3rem;
+  border: 0;
+  border-radius: 0.3125rem;
+
+  &:focus {
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  &__container {
+    position: relative;
+
+    &--bill::before {
+      content: url(../images/icon-dollar.svg);
+
+      height: 1rem;
+      width: auto;
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateX(1.1875rem) translateY(-50%);
+    }
+
+    &--people::before {
+      content: url(../images/icon-person.svg);
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateX(1.0625rem) translateY(-50%);
+    }
+  }
+
+  &--bill,
+  &--people {
+    padding-left: 2.5rem;
+    padding-right: 1.0625rem;
+
+    text-align: right;
+  }
+}
+
+.input--custom-tip {
+  &::placeholder {
+    text-align: center;
+  }
+
+  &[data-active] {
+    padding-right: 0.8125rem;
+  }
 }
