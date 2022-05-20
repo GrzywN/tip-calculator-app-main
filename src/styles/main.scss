@@ -4,8 +4,8 @@
 
 @import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
 
-@import 'layout/header', 'layout/footer';
+@import 'layout/calculator';
 
-@import 'components/button';
+@import 'components/button', 'components/input';
 
 @import 'themes/default';

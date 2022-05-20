@@ -1,0 +1,55 @@
+.calculator {
+  width: 100%;
+
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  border-radius: 1.5625rem;
+
+  display: flex;
+  flex-direction: column;
+
+  // &__inputs {
+  // }
+  // &__bill {
+  // }
+  // &__bill-label {
+  // }
+  &__select-tip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 3rem);
+
+    row-gap: 1rem;
+    column-gap: 0.875rem;
+  }
+  &__select-tip {
+  }
+  // &__select-tip-label {
+  // }
+  // &__nr-of-people {
+  // }
+  // &__outputs {
+  // }
+
+  @include media('>=medium') {
+    max-width: 57.5rem;
+    min-height: 30.0625rem;
+
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    flex-flow: row wrap;
+    gap: 3rem;
+
+    &__inputs {
+      width: 379px;
+    }
+
+    &__outputs {
+      flex: 1;
+    }
+  }
+}

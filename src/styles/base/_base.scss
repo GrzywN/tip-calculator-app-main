@@ -9,11 +9,17 @@ html {
   margin: 0;
   padding: 0;
 
-  // border: 1px dashed grey;
+  border: 1px dashed grey;
 }
 
 body {
-  min-height: 100vh;
-
   background-color: $color-light-grayish-cyan;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+
+  display: grid;
+  place-items: center;
 }
