@@ -1,3 +1,22 @@
+label {
+  color: $color-dark-grayish-cyan;
+}
+
 .calculator {
   background-color: #fff;
+}
+
+.button--tip {
+  background-color: $color-very-dark-cyan;
+  color: $color-white;
+
+  &[data-active] {
+    background-color: $color-strong-cyan;
+    color: $color-very-dark-cyan;
+  }
+
+  &:hover {
+    background-color: $color-light-cyan;
+    color: $color-very-dark-cyan;
+  }
 }
