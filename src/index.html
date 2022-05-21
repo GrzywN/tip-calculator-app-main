@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Karol Binkowski" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-    <link rel="stylesheet" href="styles/main.scss" />
     <script src="scripts/app.ts"></script>
+    <link rel="stylesheet" href="styles/main.scss" />
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
@@ -46,16 +46,24 @@
             </div>
           </div>
         </div>
-        <div class="calculator__outputs"></div>
+        <div class="calculator__outputs">
+          <div class="calculator__outputs-row">
+            <div class="calculator__label-container">
+              <p class="calculator__label calculator__label--tip-amount">Tip Amount</p>
+              <small class="calculator__per-person">/ person</small>
+            </div>
+            <h2 class="calculator__output" id="tip-amount">$0.00</h2>
+          </div>
+          <div class="calculator__outputs-row calculator__outputs-row--total">
+            <div class="calculator__label-container">
+              <p class="calculator__label calculator__label--total">Total</p>
+              <small class="calculator__per-person">/ person</small>
+            </div>
+            <h2 class="calculator__output" id="total">$0.00</h2>
+          </div>
+          <button class="button button--reset">RESET</button>
+        </div>
       </div>
     </main>
   </body>
 </html>
-<!-- 
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset -->

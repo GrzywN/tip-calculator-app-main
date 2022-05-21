@@ -4,6 +4,10 @@ label {
 
 .calculator {
   background-color: #fff;
+
+  &__outputs {
+    background-color: $color-very-dark-cyan;
+  }
 }
 
 .input {
@@ -36,6 +40,31 @@ label {
   }
 
   &:hover {
+    background-color: $color-light-cyan;
+    color: $color-very-dark-cyan;
+  }
+}
+.calculator__label--tip-amount,
+.calculator__label--total {
+  color: $color-white;
+}
+
+.calculator__per-person {
+  color: $color-grayish-cyan;
+}
+.calculator__output {
+  color: $color-strong-cyan;
+}
+
+.button--reset {
+  background-color: $color-strong-cyan;
+  color: $color-very-dark-cyan;
+
+  &:disabled {
+    background-color: $color-dark-cyan;
+  }
+
+  &:enabled:hover {
     background-color: $color-light-cyan;
     color: $color-very-dark-cyan;
   }
