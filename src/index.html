@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Karol Binkowski" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-    <script src="scripts/app.ts"></script>
+    <script src="scripts/app.ts" defer></script>
     <link rel="stylesheet" href="styles/main.scss" />
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
@@ -24,11 +24,11 @@
               Select Tip %
             </label>
             <div class="calculator__button-grid">
-              <button class="button button--tip">5%</button>
-              <button class="button button--tip">10%</button>
-              <button class="button button--tip">15%</button>
-              <button class="button button--tip">25%</button>
-              <button class="button button--tip">50%</button>
+              <button class="button button--tip" id="tip-5">5%</button>
+              <button class="button button--tip" id="tip-10">10%</button>
+              <button class="button button--tip" id="tip-15">15%</button>
+              <button class="button button--tip" id="tip-25">25%</button>
+              <button class="button button--tip" id="tip-50">50%</button>
               <input
                 class="input input--custom-tip"
                 id="custom-tip"
@@ -42,7 +42,7 @@
               Number of People
             </label>
             <div class="input__container input__container--people">
-              <input class="input input--people" id="nr-of-people" type="text" placeholder="0" />
+              <input class="input input--people" id="people" type="text" placeholder="0" />
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
             </div>
             <h2 class="calculator__output" id="total">$0.00</h2>
           </div>
-          <button class="button button--reset">RESET</button>
+          <button class="button button--reset" id="reset">RESET</button>
         </div>
       </div>
     </main>
