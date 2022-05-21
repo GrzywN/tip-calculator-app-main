@@ -14,14 +14,16 @@
       <div class="calculator">
         <div class="calculator__inputs">
           <div class="calculator__bill">
-            <label class="calculator__bill-label">Bill</label>
+            <label class="calculator__label calculator__label--bill" for="bill">Bill</label>
             <div class="input__container input__container--bill">
               <input class="input input--bill" id="bill" type="text" placeholder="0" />
             </div>
           </div>
           <div class="calculator__select-tip">
-            <label class="calculator__select-tip-label">Select Tip %</label>
-            <div class="calculator__select-tip-grid">
+            <label class="calculator__label calculator__label--select-tip" for="custom-tip">
+              Select Tip %
+            </label>
+            <div class="calculator__button-grid">
               <button class="button button--tip">5%</button>
               <button class="button button--tip">10%</button>
               <button class="button button--tip">15%</button>
@@ -36,7 +38,9 @@
             </div>
           </div>
           <div class="calculator__people">
-            <label class="calculator__people-label">Number of People</label>
+            <label class="calculator__label calculator__label--people" for="nr-of-people">
+              Number of People
+            </label>
             <div class="input__container input__container--people">
               <input class="input input--people" id="nr-of-people" type="text" placeholder="0" />
             </div>
