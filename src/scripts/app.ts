@@ -1,7 +1,7 @@
 import DomElements from './modules/DomElements';
 import Calculator from './modules/Calculator';
 
-const domElements: DomElements = {
+DomElements.set({
   bill: document.getElementById('bill') as HTMLInputElement,
   tipCustom: document.getElementById('custom-tip') as HTMLInputElement,
   people: document.getElementById('people') as HTMLInputElement,
@@ -17,6 +17,6 @@ const domElements: DomElements = {
 
   tipAmount: document.getElementById('tip-amount') as HTMLHeadingElement,
   total: document.getElementById('total') as HTMLHeadingElement,
-};
+});
 
-Calculator.init(domElements);
+Calculator.init();
