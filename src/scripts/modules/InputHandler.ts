@@ -13,5 +13,6 @@ export default class InputHandler {
 
   private static handleInput(target) {
     if (target.value !== '') Renderer.updateDisplay();
+    else Renderer.resetOutput();
   }
 }

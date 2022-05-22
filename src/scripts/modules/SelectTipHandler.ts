@@ -12,7 +12,7 @@ export default class SelectTipHandler {
   }
 
   private selectLastSessionTip() {
-    if (localStorage.getItem('lastTip').length > 0) {
+    if (localStorage.getItem('lastTip') != null) {
       const lastID = localStorage.getItem('lastTip');
       const lastTipElement = document.getElementById(lastID);
       lastTipElement.dataset.active = Globals.TRUE;

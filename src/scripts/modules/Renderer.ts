@@ -18,13 +18,6 @@ export default class Renderer {
 
   private static peopleValue: number;
 
-  public static reset() {
-    DomElements.bill.value = '';
-    DomElements.people.value = '';
-    DomElements.tipAmount.textContent = '$0.00';
-    DomElements.total.textContent = '$0.00';
-  }
-
   public static updateDisplay() {
     Renderer.saveCurrentData();
     if (Renderer.areInputsValid()) {
@@ -32,6 +25,21 @@ export default class Renderer {
       const outputStrings = Renderer.format(calculatedNumbers);
       Renderer.render(outputStrings);
     }
+  }
+
+  public static reset() {
+    Renderer.resetInput();
+    Renderer.resetOutput();
+  }
+
+  public static resetInput() {
+    DomElements.bill.value = '';
+    DomElements.people.value = '';
+  }
+
+  public static resetOutput() {
+    DomElements.tipAmount.textContent = '$0.00';
+    DomElements.total.textContent = '$0.00';
   }
 
   private static saveCurrentData() {
@@ -67,7 +75,7 @@ export default class Renderer {
 
   private static format(output: CalculatedNumbers): OutputStrings {
     const tipAmount: string = `$${output.tipAmount.toFixed(2)}`;
-    const total: string = `$${Math.round(output.total)}`;
+    const total: string = `$${Math.round(output.total * 100) / 100}`;
     return { tipAmount, total };
   }
 

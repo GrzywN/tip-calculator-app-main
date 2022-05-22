@@ -2,6 +2,10 @@ label {
   color: $color-dark-grayish-cyan;
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: $color-dark-cyan;
+}
+
 .calculator {
   background-color: #fff;
 
