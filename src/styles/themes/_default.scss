@@ -34,7 +34,7 @@ label {
   background-color: $color-very-dark-cyan;
   color: $color-white;
 
-  &[data-active] {
+  &[data-active='true'] {
     background-color: $color-strong-cyan;
     color: $color-very-dark-cyan;
   }

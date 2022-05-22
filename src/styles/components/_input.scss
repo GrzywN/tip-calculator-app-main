@@ -45,11 +45,13 @@
 }
 
 .input--custom-tip {
+  text-align: right;
+
   &::placeholder {
     text-align: center;
   }
 
-  &[data-active] {
+  &[data-active='true'] {
     padding-right: 0.8125rem;
   }
 }

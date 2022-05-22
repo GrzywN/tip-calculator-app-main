@@ -1,3 +1,5 @@
+import Globals from './Globals';
+
 interface Inputs {
   bill: HTMLInputElement;
   customTip: HTMLInputElement;
@@ -5,33 +7,20 @@ interface Inputs {
 }
 
 export default class InputFilters {
-  private static FLOAT_REGEX: RegExp = /^\d*\.?\d*$/;
-  private static INTEGER_REGEX: RegExp = /^\d*$/;
-
   private constructor() {}
 
   public static init(inputs: Inputs) {
-    InputFilters.setInputFilter(inputs.bill, value => InputFilters.FLOAT_REGEX.test(value));
-    InputFilters.setInputFilter(inputs.customTip, value => InputFilters.INTEGER_REGEX.test(value));
-    InputFilters.setInputFilter(inputs.people, value => InputFilters.INTEGER_REGEX.test(value));
+    InputFilters.setInputFilter(inputs.bill, value => Globals.FLOAT_REGEX.test(value));
+    InputFilters.setInputFilter(inputs.customTip, value => Globals.INTEGER_REGEX.test(value));
+    InputFilters.setInputFilter(inputs.people, value => Globals.INTEGER_REGEX.test(value));
   }
 
   private static setInputFilter(textbox: Element, inputFilter: (value: string) => boolean): void {
-    [
-      'contextmenu',
-      'drop',
-      'focusout',
-      'input',
-      'keydown',
-      'keyup',
-      'mousedown',
-      'mouseup',
-      'select',
-    ].forEach(event => {
+    Globals.EVENTS_TO_FILTER.forEach(event => {
       textbox.addEventListener(
         event,
         function (
-          this: (HTMLInputElement | HTMLTextAreaElement) & {
+          this: HTMLInputElement & {
             oldValue: string;
             oldSelectionStart: number | null;
             oldSelectionEnd: number | null;
