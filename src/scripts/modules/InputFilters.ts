@@ -2,10 +2,10 @@ import DomElements from './DomElements';
 import Globals from './Globals';
 
 export default class InputFilters {
-  public constructor(elements: DomElements) {
-    InputFilters.setInputFilter(elements.bill, value => Globals.FLOAT_REGEX.test(value));
-    InputFilters.setInputFilter(elements.tipCustom, value => Globals.INTEGER_REGEX.test(value));
-    InputFilters.setInputFilter(elements.people, value => Globals.INTEGER_REGEX.test(value));
+  public constructor() {
+    InputFilters.setInputFilter(DomElements.bill, value => Globals.FLOAT_REGEX.test(value));
+    InputFilters.setInputFilter(DomElements.tipCustom, value => Globals.INTEGER_REGEX.test(value));
+    InputFilters.setInputFilter(DomElements.people, value => Globals.INTEGER_REGEX.test(value));
   }
 
   private static setInputFilter(textbox: Element, inputFilter: (value: string) => boolean): void {
