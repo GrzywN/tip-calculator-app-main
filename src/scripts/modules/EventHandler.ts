@@ -59,6 +59,7 @@ export default class EventHandler {
   private reset() {
     this.inputs.forEach(e => (e.value = ''));
     this.outputs.forEach(e => (e.textContent = '$0.00'));
+    this.disableAllPresetTips();
     this.setDefaultTip();
   }
 
