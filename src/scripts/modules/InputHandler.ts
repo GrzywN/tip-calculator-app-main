@@ -3,15 +3,15 @@ import Renderer from './Renderer';
 
 export default class InputHandler {
   constructor() {
-    this.setListeners();
+    InputHandler.setListeners();
   }
 
-  private setListeners() {
-    DomElements.bill.addEventListener('input', e => this.handleInput(e.target));
-    DomElements.people.addEventListener('input', e => this.handleInput(e.target));
+  private static setListeners() {
+    DomElements.bill.addEventListener('input', (e) => InputHandler.handleInput(e.target));
+    DomElements.people.addEventListener('input', (e) => InputHandler.handleInput(e.target));
   }
 
-  private handleInput(target) {
+  private static handleInput(target) {
     if (target.value !== '') Renderer.updateDisplay();
   }
 }

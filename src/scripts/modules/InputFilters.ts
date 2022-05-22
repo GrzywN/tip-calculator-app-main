@@ -3,13 +3,13 @@ import Globals from './Globals';
 
 export default class InputFilters {
   public constructor() {
-    InputFilters.setInputFilter(DomElements.bill, value => Globals.FLOAT_REGEX.test(value));
-    InputFilters.setInputFilter(DomElements.tipCustom, value => Globals.INTEGER_REGEX.test(value));
-    InputFilters.setInputFilter(DomElements.people, value => Globals.INTEGER_REGEX.test(value));
+    InputFilters.setInputFilter(DomElements.bill, (val) => Globals.FLOAT_REGEX.test(val));
+    InputFilters.setInputFilter(DomElements.tipCustom, (val) => Globals.INTEGER_REGEX.test(val));
+    InputFilters.setInputFilter(DomElements.people, (val) => Globals.INTEGER_REGEX.test(val));
   }
 
   private static setInputFilter(textbox: Element, inputFilter: (value: string) => boolean): void {
-    Globals.EVENTS_TO_FILTER.forEach(event => {
+    Globals.EVENTS_TO_FILTER.forEach((event) => {
       textbox.addEventListener(
         event,
         function (
@@ -17,7 +17,7 @@ export default class InputFilters {
             oldValue: string;
             oldSelectionStart: number | null;
             oldSelectionEnd: number | null;
-          }
+          },
         ) {
           if (inputFilter(this.value)) {
             this.oldValue = this.value;
@@ -31,7 +31,7 @@ export default class InputFilters {
           } else {
             this.value = '';
           }
-        }
+        },
       );
     });
   }

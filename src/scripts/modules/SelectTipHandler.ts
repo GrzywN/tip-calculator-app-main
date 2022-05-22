@@ -28,18 +28,18 @@ export default class SelectTipHandler {
 
   private setTipToLocalStorage() {
     localStorage.setItem('lastPresetTip', this.currentPresetTip.id);
-    localStorage.setItem('lastTip', this.getCurrentTip().id);
+    localStorage.setItem('lastTip', SelectTipHandler.getCurrentTip().id);
   }
 
   private setListeners() {
-    document.addEventListener('click', e => this.handleClickEvent(e.target as HTMLElement));
+    document.addEventListener('click', (e) => this.handleClickEvent(e.target as HTMLElement));
     DomElements.tipCustom.addEventListener('input', () => this.handleCustomTip());
   }
 
   private handleClickEvent(target: HTMLElement) {
     if (target === DomElements.tipCustom) this.handleCustomTip();
     else {
-      DomElements.tipButtons.forEach(e => {
+      DomElements.tipButtons.forEach((e) => {
         if (e === target) this.selectTip(target);
       });
     }
@@ -51,9 +51,9 @@ export default class SelectTipHandler {
     else this.selectTip(this.currentPresetTip);
   }
 
-  private getCurrentTip(): HTMLElement {
+  private static getCurrentTip(): HTMLElement {
     let currentTip;
-    [...DomElements.tipButtons, DomElements.tipCustom].forEach(e => {
+    [...DomElements.tipButtons, DomElements.tipCustom].forEach((e) => {
       if (e.dataset.active === Globals.TRUE) currentTip = e;
     });
     if (currentTip == null) throw new Error('None of the tips is selected SelectTipHandler.ts');
@@ -61,7 +61,7 @@ export default class SelectTipHandler {
   }
 
   private saveCurrentTip() {
-    DomElements.tipButtons.forEach(e => {
+    DomElements.tipButtons.forEach((e) => {
       if (e.dataset.active === Globals.TRUE) {
         this.currentPresetTip = e;
         this.setTipToLocalStorage();
@@ -70,7 +70,7 @@ export default class SelectTipHandler {
   }
 
   private selectTip(toActivate) {
-    this.disableAllTips();
+    SelectTipHandler.disableAllTips();
     toActivate.dataset.active = Globals.TRUE;
     if (toActivate !== DomElements.tipCustom) {
       this.currentPresetTip = toActivate;
@@ -79,9 +79,9 @@ export default class SelectTipHandler {
     Renderer.updateDisplay();
   }
 
-  private disableAllTips() {
+  private static disableAllTips() {
     [...DomElements.tipButtons, DomElements.tipCustom].forEach(
-      e => (e.dataset.active = Globals.FALSE)
+      (e) => (e.dataset.active = Globals.FALSE),
     );
   }
 }

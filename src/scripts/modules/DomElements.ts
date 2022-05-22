@@ -12,20 +12,24 @@ interface DomElementsTemplate {
 
 export default class DomElements {
   public static bill: HTMLInputElement;
+
   public static tipCustom: HTMLInputElement;
+
   public static people: HTMLInputElement;
 
   public static tipButtons: Array<HTMLButtonElement>;
+
   public static resetButton: HTMLButtonElement;
 
   public static tipAmount: HTMLHeadingElement;
+
   public static total: HTMLHeadingElement;
 
   private static initialized: boolean;
 
   private constructor() {}
 
-  public static set(elements: DomElementsTemplate) {
+  public static setElements(elements: DomElementsTemplate) {
     DomElements.bill = elements.bill;
     DomElements.tipCustom = elements.tipCustom;
     DomElements.people = elements.people;

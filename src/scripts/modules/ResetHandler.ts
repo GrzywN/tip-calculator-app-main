@@ -3,14 +3,14 @@ import Renderer from './Renderer';
 
 export default class ResetHandler {
   constructor() {
-    this.setListeners();
+    ResetHandler.setListeners();
   }
 
-  private setListeners() {
-    DomElements.resetButton.addEventListener('click', e => this.handleInput(e.target));
+  private static setListeners() {
+    DomElements.resetButton.addEventListener('click', (e) => ResetHandler.handleInput(e.target));
   }
 
-  private handleInput(target) {
+  private static handleInput(target) {
     Renderer.reset();
   }
 }
