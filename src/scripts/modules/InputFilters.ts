@@ -2,9 +2,7 @@ import DomElements from './DomElements';
 import Globals from './Globals';
 
 export default class InputFilters {
-  private constructor() {}
-
-  public static init(elements: DomElements) {
+  public constructor(elements: DomElements) {
     InputFilters.setInputFilter(elements.bill, value => Globals.FLOAT_REGEX.test(value));
     InputFilters.setInputFilter(elements.tipCustom, value => Globals.INTEGER_REGEX.test(value));
     InputFilters.setInputFilter(elements.people, value => Globals.INTEGER_REGEX.test(value));

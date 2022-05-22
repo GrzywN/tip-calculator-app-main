@@ -1,6 +1,5 @@
-import InputFilters from './modules/InputFilters';
-import EventHandler from './modules/EventHandler';
 import DomElements from './modules/DomElements';
+import Calculator from './modules/Calculator';
 
 const domElements: DomElements = {
   bill: document.getElementById('bill') as HTMLInputElement,
@@ -20,6 +19,4 @@ const domElements: DomElements = {
   total: document.getElementById('total') as HTMLHeadingElement,
 };
 
-InputFilters.init(domElements);
-
-const eventHandler = new EventHandler(domElements);
+Calculator.init(domElements);
