@@ -1,18 +1,13 @@
+import DomElements from './DomElements';
 import Globals from './Globals';
-
-interface Inputs {
-  bill: HTMLInputElement;
-  customTip: HTMLInputElement;
-  people: HTMLInputElement;
-}
 
 export default class InputFilters {
   private constructor() {}
 
-  public static init(inputs: Inputs) {
-    InputFilters.setInputFilter(inputs.bill, value => Globals.FLOAT_REGEX.test(value));
-    InputFilters.setInputFilter(inputs.customTip, value => Globals.INTEGER_REGEX.test(value));
-    InputFilters.setInputFilter(inputs.people, value => Globals.INTEGER_REGEX.test(value));
+  public static init(elements: DomElements) {
+    InputFilters.setInputFilter(elements.bill, value => Globals.FLOAT_REGEX.test(value));
+    InputFilters.setInputFilter(elements.tipCustom, value => Globals.INTEGER_REGEX.test(value));
+    InputFilters.setInputFilter(elements.people, value => Globals.INTEGER_REGEX.test(value));
   }
 
   private static setInputFilter(textbox: Element, inputFilter: (value: string) => boolean): void {

@@ -1,7 +1,8 @@
 import InputFilters from './modules/InputFilters';
 import EventHandler from './modules/EventHandler';
+import DomElements from './modules/DomElements';
 
-const domElements = {
+const domElements: DomElements = {
   bill: document.getElementById('bill') as HTMLInputElement,
   tipCustom: document.getElementById('custom-tip') as HTMLInputElement,
   people: document.getElementById('people') as HTMLInputElement,
@@ -19,16 +20,6 @@ const domElements = {
   total: document.getElementById('total') as HTMLHeadingElement,
 };
 
-InputFilters.init({
-  bill: domElements.bill,
-  customTip: domElements.tipCustom,
-  people: domElements.people,
-});
+InputFilters.init(domElements);
 
-const eventHandler = new EventHandler({
-  tipButtons: domElements.tipButtons,
-  tipCustom: domElements.tipCustom,
-  resetButton: domElements.resetButton,
-  inputs: [domElements.bill, domElements.tipCustom, domElements.people],
-  outputs: [domElements.tipAmount, domElements.total],
-});
+const eventHandler = new EventHandler(domElements);

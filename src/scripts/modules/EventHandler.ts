@@ -1,28 +1,21 @@
+import DomElements from './DomElements';
 import Globals from './Globals';
-
-interface ElementsToBeHandled {
-  tipButtons: Array<HTMLButtonElement>;
-  tipCustom: HTMLInputElement;
-  resetButton: HTMLButtonElement;
-  inputs: Array<HTMLInputElement>;
-  outputs: Array<HTMLHeadingElement>;
-}
 
 export default class EventHandler {
   private currentPresetTip: HTMLButtonElement;
 
-  private tipButtons: Array<HTMLButtonElement>;
-  private tipCustom: HTMLInputElement;
-  private resetButton: HTMLButtonElement;
   private inputs: Array<HTMLInputElement>;
+  private tipCustom: HTMLInputElement;
+  private tipButtons: Array<HTMLButtonElement>;
+  private resetButton: HTMLButtonElement;
   private outputs: Array<HTMLHeadingElement>;
 
-  public constructor(elements: ElementsToBeHandled) {
-    this.tipButtons = elements.tipButtons;
+  public constructor(elements: DomElements) {
+    this.inputs = [elements.bill, elements.tipCustom, elements.people];
     this.tipCustom = elements.tipCustom;
+    this.tipButtons = elements.tipButtons;
     this.resetButton = elements.resetButton;
-    this.inputs = elements.inputs;
-    this.outputs = elements.outputs;
+    this.outputs = [elements.tipAmount, elements.total];
 
     this.init();
   }
