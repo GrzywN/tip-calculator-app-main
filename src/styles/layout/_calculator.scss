@@ -1,12 +1,14 @@
 .calculator {
   width: 100%;
 
+  margin-top: 2.5rem;
   padding: 2rem;
 
   border-radius: 1.5625rem;
 
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 
   &__inputs {
     display: flex;
@@ -79,10 +81,13 @@
   @include media('>=small', '<large') {
     width: min(37.5rem, 100%);
 
-    margin: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   @include media('>=large') {
+    margin-top: 0;
+
     max-width: 57.5rem;
     min-height: 30.0625rem;
 
