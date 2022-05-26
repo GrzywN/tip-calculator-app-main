@@ -12,7 +12,10 @@ export default class InputHandler {
   }
 
   private static handleInput(target) {
-    if (target.value !== '') Renderer.updateDisplay();
-    else Renderer.resetOutput();
+    if (target.value.length > 0) Renderer.updateDisplay();
+    else {
+      Renderer.resetOutput();
+      Renderer.updateResetButtonState();
+    }
   }
 }

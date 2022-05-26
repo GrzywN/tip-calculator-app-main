@@ -7,10 +7,10 @@ export default class ResetHandler {
   }
 
   private static setListeners() {
-    DomElements.resetButton.addEventListener('click', (e) => ResetHandler.handleInput(e.target));
+    DomElements.resetButton.addEventListener('click', () => ResetHandler.handleInput());
   }
 
-  private static handleInput(target) {
+  private static handleInput() {
     Renderer.reset();
   }
 }

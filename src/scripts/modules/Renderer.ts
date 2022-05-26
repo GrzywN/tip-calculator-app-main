@@ -20,7 +20,11 @@ export default class Renderer {
 
   public static updateDisplay() {
     Renderer.saveCurrentData();
-    if (Renderer.areInputsValid()) {
+
+    Renderer.updateResetButtonState();
+
+    const isValid = Renderer.areInputsValid();
+    if (isValid) {
       const calculatedNumbers = Renderer.calculate();
       const outputStrings = Renderer.format(calculatedNumbers);
       Renderer.render(outputStrings);
@@ -30,6 +34,7 @@ export default class Renderer {
   public static reset() {
     Renderer.resetInput();
     Renderer.resetOutput();
+    Renderer.updateDisplay();
   }
 
   public static resetInput() {
@@ -40,6 +45,19 @@ export default class Renderer {
   public static resetOutput() {
     DomElements.tipAmount.textContent = '$0.00';
     DomElements.total.textContent = '$0.00';
+  }
+
+  public static updateResetButtonState() {
+    const isAnyInputNotEmpty = Renderer.isAnyInputNotEmpty();
+    Renderer.changeResetButtonState(isAnyInputNotEmpty);
+  }
+
+  private static changeResetButtonState(isAnyInputNotEmpty) {
+    if (isAnyInputNotEmpty) {
+      DomElements.resetButton.disabled = false;
+    } else {
+      DomElements.resetButton.disabled = true;
+    }
   }
 
   private static saveCurrentData() {
@@ -54,6 +72,10 @@ export default class Renderer {
       && Number.isFinite(Renderer.tipValue)
       && Number.isFinite(Renderer.peopleValue)
     );
+  }
+
+  private static isAnyInputNotEmpty() {
+    return DomElements.bill.value.length > 0 || DomElements.people.value.length > 0;
   }
 
   private static getTipValue(): string {
