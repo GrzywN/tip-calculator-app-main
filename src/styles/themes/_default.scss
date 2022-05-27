@@ -70,10 +70,10 @@ label {
 
   @extend %transition;
 
-  // &:hover {
-  //   background-color: $color-button-tip-hover-background;
-  //   color: $color-button-tip-hover-text;
-  // }
+  &:hover {
+    background-color: $color-button-tip-hover-background;
+    color: $color-button-tip-hover-text;
+  }
 
   &[data-active='true'] {
     background-color: $color-button-tip-active-background;
