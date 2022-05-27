@@ -20,7 +20,7 @@ export default class Renderer {
 
   public static updateDisplay() {
     Renderer.saveCurrentData();
-
+    Renderer.updateStateOfPeopleInput();
     Renderer.updateResetButtonState();
 
     const isValid = Renderer.areInputsValid();
@@ -52,6 +52,15 @@ export default class Renderer {
     Renderer.changeResetButtonState(isAnyInputNotEmpty);
   }
 
+  private static isPeopleInputValid() {
+    return !(parseInt(DomElements.people.value, 10) === 0);
+  }
+
+  private static updateStateOfPeopleInput() {
+    if (Renderer.isPeopleInputValid()) DomElements.people.dataset.valid = Globals.TRUE;
+    else DomElements.people.dataset.valid = Globals.FALSE;
+  }
+
   private static changeResetButtonState(isAnyInputNotEmpty) {
     if (isAnyInputNotEmpty) {
       DomElements.resetButton.disabled = false;
@@ -71,6 +80,7 @@ export default class Renderer {
       Number.isFinite(Renderer.billValue)
       && Number.isFinite(Renderer.tipValue)
       && Number.isFinite(Renderer.peopleValue)
+      && Renderer.isPeopleInputValid()
     );
   }
 
