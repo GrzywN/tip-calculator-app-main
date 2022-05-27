@@ -7,10 +7,6 @@
   &:not(:disabled) {
     cursor: pointer;
   }
-
-  &:not(:disabled):hover {
-    transform: scaleX(1.01);
-  }
 }
 
 .button--reset {
