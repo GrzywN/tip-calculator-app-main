@@ -12,3 +12,37 @@
 .button--reset {
   height: 3rem;
 }
+
+.button--animated {
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 3.125rem;
+    height: 9.6875rem;
+
+    position: absolute;
+    left: 0;
+    top: -3.125rem;
+
+    background-color: $color-white;
+    opacity: 0.1;
+
+    transform: translateX(-4.6875rem) rotate(35deg);
+    transition: transform $transition-button--animated;
+  }
+
+  &:hover::after {
+    transform: translateX(calc(4.6875rem + 120%)) rotate(35deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button--animated {
+    &::after {
+      display: none;
+      transition: none;
+    }
+  }
+}

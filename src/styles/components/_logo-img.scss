@@ -1,13 +1,10 @@
 .logo-img {
   margin-top: 3.125rem;
 
-  @include media('>=large') {
-    margin-top: 0;
+  width: 5.375rem;
+  height: 3.3125rem;
 
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%) translateY(15.92vh);
-    z-index: -1000;
+  @include media('>=large') {
+    margin-top: 10.1875rem;
   }
 }

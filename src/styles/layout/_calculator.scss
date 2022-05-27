@@ -10,6 +10,8 @@
   flex-direction: column;
   gap: 2rem;
 
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 0.4375rem 1.8125rem 0px;
+
   &__inputs {
     display: flex;
     flex-direction: column;
@@ -86,7 +88,7 @@
   }
 
   @include media('>=large') {
-    margin-top: 0;
+    margin-top: 5.4375rem;
 
     max-width: 57.5rem;
     min-height: 30.0625rem;

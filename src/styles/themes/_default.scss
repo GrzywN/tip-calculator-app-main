@@ -1,75 +1,110 @@
-label {
-  color: $color-dark-grayish-cyan;
-}
+$color-scrollbar-thumb: $color-dark-cyan;
+
+$color-calculator-background: $color-white;
+$color-calculator-outputs: $color-very-dark-cyan;
+$color-calculator-label: $color-dark-grayish-cyan;
+$color-calculator-label-output: $color-white;
+$color-calculator-per-person: $color-grayish-cyan;
+$color-calculator-output: $color-strong-cyan;
+
+$color-input-background: $color-very-light-grayish-cyan;
+$color-input-text: $color-very-dark-cyan;
+$color-input-caret: $color-strong-cyan;
+$color-input-border: $color-strong-cyan;
+$color-input-placeholder: $color-very-dark-cyan;
+$color-input-custom-tip-placeholder: $color-dark-grayish-cyan;
+
+$color-button-tip-background: $color-very-dark-cyan;
+$color-button-tip-text: $color-white;
+$color-button-tip-hover-background: $color-light-cyan;
+$color-button-tip-hover-text: $color-very-dark-cyan;
+$color-button-tip-active-background: $color-strong-cyan;
+$color-button-tip-active-text: $color-very-dark-cyan;
+
+$color-button-reset-background: $color-strong-cyan;
+$color-button-reset-text: $color-very-dark-cyan;
+$color-button-reset-disabled-background: $color-dark-cyan;
+$color-button-reset-disabled-text: $color-dark-cyan-2;
+$color-button-reset-hover-background: $color-light-cyan;
+$color-button-reset-hover-text: $color-very-dark-cyan;
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-dark-cyan;
+  background-color: $color-scrollbar-thumb;
+}
+
+label {
+  color: $color-calculator-label;
 }
 
 .calculator {
-  background-color: #fff;
+  background-color: $color-calculator-background;
 
   &__outputs {
-    background-color: $color-very-dark-cyan;
+    background-color: $color-calculator-outputs;
   }
 }
 
 .input {
-  background-color: $color-very-light-grayish-cyan;
-  color: $color-very-dark-cyan;
-  caret-color: $color-strong-cyan;
+  background-color: $color-input-background;
+  color: $color-input-text;
+  caret-color: $color-input-caret;
 
   &:focus {
-    border-color: $color-strong-cyan;
+    border-color: $color-input-border;
   }
 }
 
 .input--bill::placeholder,
 .input--people::placeholder {
-  color: $color-very-dark-cyan;
+  color: $color-input-placeholder;
   opacity: 0.35;
 }
 
 .input--custom-tip::placeholder {
-  color: $color-dark-grayish-cyan;
+  color: $color-input-custom-tip-placeholder;
 }
 
 .button--tip {
-  background-color: $color-very-dark-cyan;
-  color: $color-white;
+  background-color: $color-button-tip-background;
+  color: $color-button-tip-text;
+
+  @extend %transition;
+
+  // &:hover {
+  //   background-color: $color-button-tip-hover-background;
+  //   color: $color-button-tip-hover-text;
+  // }
 
   &[data-active='true'] {
-    background-color: $color-strong-cyan;
-    color: $color-very-dark-cyan;
-  }
-
-  &:hover {
-    background-color: $color-light-cyan;
-    color: $color-very-dark-cyan;
+    background-color: $color-button-tip-active-background;
+    color: $color-button-tip-active-text;
   }
 }
 .calculator__label--tip-amount,
 .calculator__label--total {
-  color: $color-white;
+  color: $color-calculator-label-output;
 }
 
 .calculator__per-person {
-  color: $color-grayish-cyan;
+  color: $color-calculator-per-person;
 }
 .calculator__output {
-  color: $color-strong-cyan;
+  color: $color-calculator-output;
 }
 
 .button--reset {
-  background-color: $color-strong-cyan;
-  color: $color-very-dark-cyan;
+  background-color: $color-button-reset-background;
+  color: $color-button-reset-text;
+
+  @extend %transition;
 
   &:disabled {
-    background-color: $color-dark-cyan;
+    background-color: $color-button-reset-disabled-background;
+    color: $color-button-reset-disabled-text;
   }
 
-  &:enabled:hover {
-    background-color: $color-light-cyan;
-    color: $color-very-dark-cyan;
+  &:not(:disabled):hover {
+    background-color: $color-button-reset-hover-background;
+    color: $color-button-reset-hover-text;
   }
 }
