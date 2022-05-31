@@ -13,6 +13,8 @@
   &__container {
     position: relative;
 
+    @extend %transition;
+
     &--bill::before {
       content: url(../images/icon-dollar.svg);
 
@@ -32,6 +34,23 @@
       left: 0;
       top: 50%;
       transform: translateX(1.0625rem) translateY(-50%);
+    }
+
+    &[data-valid='false'] {
+      > .input--people {
+        border-style: solid;
+        border-width: 0.125rem;
+
+        @extend %transition;
+      }
+
+      &::after {
+        content: 'Can’t be zero';
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(calc(-100% - 0.375rem));
+      }
     }
   }
 

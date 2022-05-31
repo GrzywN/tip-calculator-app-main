@@ -2,5 +2,5 @@ $transition-default: 250ms ease;
 
 %transition {
   transition: $transition-default;
-  transition-property: color, background-color, transform;
+  transition-property: color, background-color, transform, border-color, caret-color;
 }
