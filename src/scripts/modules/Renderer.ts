@@ -82,10 +82,10 @@ export default class Renderer {
 
   private static areInputsValid() {
     return (
-      Number.isFinite(Renderer.billValue) &&
-      Number.isFinite(Renderer.tipValue) &&
-      Number.isFinite(Renderer.peopleValue) &&
-      Renderer.isPeopleInputValid()
+      Number.isFinite(Renderer.billValue)
+      && Number.isFinite(Renderer.tipValue)
+      && Number.isFinite(Renderer.peopleValue)
+      && Renderer.isPeopleInputValid()
     );
   }
 
@@ -95,7 +95,7 @@ export default class Renderer {
 
   private static getTipValue(): string {
     let selectedTip;
-    [...DomElements.tipButtons, DomElements.tipCustom].forEach(e => {
+    [...DomElements.tipButtons, DomElements.tipCustom].forEach((e) => {
       if (e.dataset.active === Globals.TRUE) selectedTip = e;
     });
     if (selectedTip == null) throw new Error('Selected tip is empty Renderer, line 22');
