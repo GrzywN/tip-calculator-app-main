@@ -49,7 +49,7 @@ Users should be able to:
 
 ### Continued development
 
-I'll improve this solution in the future, based on suggestions and testing.
+I'll improve this solution in the future, based on your suggestions and testing.
 
 ## Author
 
